@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本网格布局</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 12px;
+        }
+        body {
+            width: 100%;
+        }
+        .grid-average ,.grid-partFix{
+            padding: 10px;
+            width: 100%;
+            display: flex;
+        }
+
+        .grid-average .grid-cell,.grid-partFix .grid-cell {
+            margin-right: 10px;
+            text-align: center;
+            border: 1px solid #000000;
+            flex: 1;
+        }
+
+        .grid-partFix .grid-cell:nth-child(1) {
+            flex-grow: 0;
+            flex-basis: 50%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    平均分配，需设置flex放大为1，即有剩余空间可放大
+</div>
+    <div class="grid-average">
+        <div class="grid-cell">1/4</div>
+        <div class="grid-cell">1/4</div>
+        <div class="grid-cell">1/4</div>
+        <div class="grid-cell">1/4</div>
+    </div>
+<div class="grid-average">
+    <div class="grid-cell">1/3</div>
+    <div class="grid-cell">1/3</div>
+    <div class="grid-cell">1/3</div>
+</div>
+
+<div>
+    百分比布局，某个网格宽度为固定百分比，其余平均分配剩余空间,固定网格的flex-grow是0，flex-basis设置宽度
+</div>
+<div class="grid-partFix">
+    <div class="grid-cell">50%</div>
+    <div class="grid-cell">auto</div>
+    <div class="grid-cell">auto</div>
+</div>
+</body>
+</html>

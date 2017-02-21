@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            height: 100%;
+            font-size: 12px;
+
+        }
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        header,footer {
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            background-color: grey;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .container .center{
+            text-align: center;
+            flex: 1;
+        }
+        .container .left {
+            text-align: center;
+            background-color: deepskyblue;
+            flex:0 0 10%;
+        }
+        .container .right {
+            text-align: center;
+            background-color: red;
+            flex:0 0 20%;
+        }
+    </style>
+</head>
+<body>
+    <header>#header</header>
+    <div class="container">
+        <mav class="left">#left</mav>
+        <main class="center">#center</main>
+        <aside class="right">#right</aside>
+    </div>
+    <footer>#footer</footer>
+</body>
+</html>
